@@ -33,7 +33,7 @@ body{
 
 
 .header{
-    background-image:  url("bgHome.jpg");
+    background-image:  url("asset/img/bgHome.jpg");
     height: 100%;
     background-attachment: fixed;
     background-position: center;
@@ -100,9 +100,5 @@ body{
     height: 100%;
     width: 100%;
 }
-
-.c1{background-color: salmon;}
-.c2{background-color: cornflowerblue;}
-
 
 
