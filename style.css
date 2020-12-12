@@ -101,4 +101,8 @@ body{
     width: 100%;
 }
 
-
+@media only screen and (max-width: 600px){
+    .header .container .tittle{
+        top: 20%;
+    }
+}
