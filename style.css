@@ -75,8 +75,16 @@ body{
     font-size: 18px;
 }
 
-.header p{margin-bottom: 15px;}
-.header i.icon{padding-right: 10px; font-size:25px;}
+.header p{
+    margin-bottom: 15px;
+}
+
+/* sosmed icon */
+.header i.icon{
+    padding-right: 10px;
+    font-size:25px;
+    color: black;
+}
 
 .content{
     height: 100%;
