@@ -79,6 +79,8 @@ ul {
     width: 100%;
     margin: 40px auto;
     padding: 25px 55px;
+    border: 1px solid black;
+    box-shadow: 5px 5px;
 }
 
 #profile {
@@ -103,11 +105,16 @@ ul {
 }
 
 .section-data {
+    margin-top: 25px;
+}
+
+.first-section {
     margin-top: 50px;
 }
 
 .skill-list {
     display: inline-block;
+    margin-bottom: 0;
 }
 
 .skill-item {
@@ -140,8 +147,89 @@ ul {
 }
 
 
+.exp-item {
+    position: relative;
+    margin-top: 10px;
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 5px 5px #f51c40;
+}
+
+.exp-item .company-name {font-size: 14px;}
+.work-time {margin-top: -9px;}
+
+.more-icon {
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    padding: 1px 8px;
+    border: 1px solid black;
+    transition: 0.1s;
+    background-color: black;
+}
+
+.more-icon:hover {
+    background-color: white;
+    color: black;
+
+}
+
+.more-mobile {
+    display: none;
+}
+
+.contact-item {
+    position: relative;
+    margin-top: 10px;   
+    height: 40px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.contact-icon {
+    color: white;
+    height: 39px;
+    width: 40px;
+    background-color: black;
+    position: absolute;
+}
+
+.contact-icon p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-detail {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translate(0 , -50%);
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+/* hide border container  */
+
+@media only screen and (max-width: 720px) {
+    #container {
+        border: none;
+        box-shadow: none;
+    }
+
+}
+
+
 /* mobile responsive */
 @media only screen and (max-width: 550px) {
+
+
     #profile, .text-profile {
         display: block;
     }
@@ -163,5 +251,12 @@ ul {
         float: none;
         width: 100%;
     }
+
+    .more-mobile {
+        display: block;
+        text-decoration: underline;
+    }
+
+    .more-icon {display: none;}
 }
 
