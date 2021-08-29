@@ -258,5 +258,10 @@ ul {
     }
 
     .more-icon {display: none;}
+    
+    .contact-item p.contact-detail {
+        font-size: 10px;
+    }
+
 }
 
