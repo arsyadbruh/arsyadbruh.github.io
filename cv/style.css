@@ -115,6 +115,30 @@ ul {
    width: 50%;
 }
 
+.edu-list {
+    margin-left: 20px;
+    border-left: 1px solid black;
+    padding-top: 10px;
+}
+
+.edu-item {
+    padding-left: 15px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.first-edu-item{
+    margin-top: 0px;
+}
+
+.border-icon {
+    border-left: 8px solid #f51c40;
+    position: absolute;
+    top: 5%;
+    bottom: 75%;
+    left: -4px;
+}
+
 
 /* mobile responsive */
 @media only screen and (max-width: 550px) {
@@ -139,6 +163,5 @@ ul {
         float: none;
         width: 100%;
     }
-
 }
 
