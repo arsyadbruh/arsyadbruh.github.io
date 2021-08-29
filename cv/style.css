@@ -11,7 +11,7 @@ body {
     font-family: 'Comfortaa', cursive;
     font-size: 16px;
     margin: 0;
-    background-color: #eeeeee;
+    background-color: #f5f5f5;
     line-height: 28px;
 }
 
@@ -106,6 +106,15 @@ ul {
     margin-top: 50px;
 }
 
+.skill-list {
+    display: inline-block;
+}
+
+.skill-item {
+   float: left; 
+   width: 50%;
+}
+
 
 /* mobile responsive */
 @media only screen and (max-width: 550px) {
@@ -120,6 +129,15 @@ ul {
 
     h1 {
         font-size: 25px;
+    }
+
+    .skill-list {
+        display: block;
+    }
+
+    .skill-item {
+        float: none;
+        width: 100%;
     }
 
 }
