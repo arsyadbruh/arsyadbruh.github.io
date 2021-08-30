@@ -264,23 +264,12 @@ p.school-name {
 
     .more-icon {display: none;}
 
-    .contact-item p.contact-detail {
-        font-size: 10px;
-    }
-
 }
 
 
-/* for iphone 6/7/8 plus */
-@media only screen and (max-width: 420px ){
-    .contact-item p.contact-detail {
-        font-size: 13px;
-    }
-}
+/* for mobile device L to M */
+@media only screen and (max-width: 430px ){
 
-/* for iphone 5 */
-@media only screen and (max-width: 330px) {
-    
     h1 {font-size: 22px;}
     .skill-item {font-size: 14px;}
 
@@ -296,6 +285,14 @@ p.school-name {
         font-size: 12px;
     }
 
+    .contact-item p.contact-detail {
+        font-size: 10px;
+    }
+}
+
+/* for mobile small device*/
+@media only screen and (max-width: 330px) {
+    
     .contact-item p.contact-detail {
         font-size: 8px;
     }
