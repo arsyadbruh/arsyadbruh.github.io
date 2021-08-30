@@ -63,6 +63,7 @@ ul {
 .text-light {font-weight: 300;}
 .text-medium {font-weight: 500;}
 .text-bold {font-weight: 700;}
+.text-extrabold {font-weight: 900;}
 .text-gl {
     font-weight: 500;
     color: rgb(116, 116, 116);
@@ -138,6 +139,10 @@ ul {
     margin-top: 0px;
 }
 
+p.school-name {
+    font-weight: 500;
+}
+
 .border-icon {
     border-left: 8px solid #f51c40;
     position: absolute;
@@ -155,7 +160,7 @@ ul {
     box-shadow: 5px 5px #f51c40;
 }
 
-.exp-item .company-name {font-size: 14px;}
+.company-name {font-size: 14px;}
 .work-time {margin-top: -9px;}
 
 .more-icon {
@@ -258,10 +263,41 @@ ul {
     }
 
     .more-icon {display: none;}
-    
+
     .contact-item p.contact-detail {
         font-size: 10px;
     }
 
+}
+
+
+/* for iphone 6/7/8 plus */
+@media only screen and (max-width: 420px ){
+    .contact-item p.contact-detail {
+        font-size: 13px;
+    }
+}
+
+/* for iphone 5 */
+@media only screen and (max-width: 330px) {
+    
+    h1 {font-size: 22px;}
+    .skill-item {font-size: 14px;}
+
+    p.edu-time, 
+    p.edu-location, 
+    p.work-time,
+    p.more-mobile {
+        font-size: 10px;
+    }
+
+    p.school-name, 
+    p.company-name {
+        font-size: 12px;
+    }
+
+    .contact-item p.contact-detail {
+        font-size: 8px;
+    }
 }
 
