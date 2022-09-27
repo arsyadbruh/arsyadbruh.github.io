@@ -248,6 +248,15 @@ p.school-name {
         box-shadow: none;
     }
 
+    #downloadPdf{
+        position: fixed;
+        padding: 8px 6px;
+    }
+
+    #downloadPdf a{
+        font-size: 20px;
+    }
+
 }
 
 
