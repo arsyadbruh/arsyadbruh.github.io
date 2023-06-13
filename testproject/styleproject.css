@@ -1,0 +1,7 @@
+.warning-project {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    border-radius: 10px;
+}
