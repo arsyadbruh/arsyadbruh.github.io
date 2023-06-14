@@ -6,10 +6,16 @@ let rootGeneralColor = "#d400ff";
 let msgBoxShadowColor = "#a3a3a3";
 let msgBoxShadow = ` `;
 
+let channelFontFamily = "Open Sans";
+let messageFontFamily = "Montserrat";
+
+let fontSizeMessage = "12";
+let fontSizeChannel = "16";
+
 const updateCodeCss = () => {
     let codeCss = `
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=${channelFontFamily}');
+@import url('https://fonts.googleapis.com/css2?family=${messageFontFamily}');
 
 :root {
     --owner-color: ${rootOwnerColor};
@@ -135,7 +141,7 @@ yt-live-chat-text-message-renderer #author-name {
     color: white !important;
     font-weight: 400;
     font-family: "Open Sans";
-    font-size: 16px !important;
+    font-size: ${fontSizeChannel}px !important;
     line-height: 20px !important;
     background-color: #a3a3a3 !important;
     padding: 4px 18px !important;
@@ -174,7 +180,7 @@ yt-live-chat-text-message-renderer #message,
 yt-live-chat-text-message-renderer #message * {
     color: #000000 !important;
     font-family: "Montserrat";
-    font-size: 14px !important;
+    font-size: ${fontSizeMessage}px !important;
     line-height: normalpx !important;
     letter-spacing: normalpx !important;
     background-color: #fff;
@@ -184,6 +190,10 @@ yt-live-chat-text-message-renderer #message * {
     border-radius: 0px 20px 20px 20px;
     border: 2px solid black;
     ${msgBoxShadow}
+}
+
+#message.yt-live-chat-text-message-renderer {
+    box-shadow: 2px 3px 0px 0px  #a3a3a3;
 }
 
 #message.yt-live-chat-text-message-renderer a.yt-live-chat-text-message-renderer {
@@ -352,6 +362,20 @@ $(document).ready(function () {
     $("#msgOwnerColor").val("#fc881c");
     $("#msgModeratorColor").val("#1d56f3");
     $("#msgMemberColor").val("#00c41a");
+    fetch("webfonts.json")
+        .then((response) => response.json())
+        .then((data) => {
+            const fonts = data.items.map((item, iteration) => {
+                return { id: iteration, text: item.family, selected: (item.family=="Open Sans") ? true : false };
+            });
+
+            $(".select-font-chat").select2({
+                data: fonts
+            });
+        })
+        .catch((error) => {
+            console.log("Terjadi kesalahan: ", error);
+        });
     updateCodeCss();
     console.log("inisiasi code complete");
 });
@@ -378,12 +402,45 @@ $("#msgMemberColor").on("input", function () {
 });
 
 $("#cbMsgBoxShadow").click(function () {
-    if (this.checked){
-        msgBoxShadow = `box-shadow: 2px 3px 0px 0px ${msgBoxShadowColor};`
-        $("yt-live-chat-text-message-renderer #message").css("box-shadow", "2px 3px 0px 0px  white");
+    if (this.checked) {
+        msgBoxShadow = `box-shadow: 2px 3px 0px 0px ${msgBoxShadowColor};`;
+        $("yt-live-chat-text-message-renderer #message").css(
+            "box-shadow",
+            "2px 3px 0px 0px  white"
+        );
     } else {
         msgBoxShadow = " ";
         $("yt-live-chat-text-message-renderer #message").css("box-shadow", "");
     }
     updateCodeCss();
 });
+
+$("#fontChatMessage").on("change", function(){
+    messageFontFamily = $("#fontChatMessage option:selected").text();
+    let linkfont = `https://fonts.googleapis.com/css?family=${messageFontFamily}&display=swap`;
+    $("link").eq(2).attr("href", linkfont);
+    $("yt-live-chat-text-message-renderer #message").css("font-family", messageFontFamily);
+    updateCodeCss();
+});
+
+$("#fontChatChannel").on("change", function(){
+    channelFontFamily = $("#fontChatChannel option:selected").text();
+    let linkfont = `https://fonts.googleapis.com/css?family=${channelFontFamily}&display=swap`;
+    $("link").eq(3).attr("href", linkfont);
+    $("yt-live-chat-text-message-renderer #author-name").css("font-family", channelFontFamily);
+    updateCodeCss();
+});
+
+$("#fontSizeMessage").on("input", function() {
+    fontSizeMessage = $(this).val();
+    $("#fontSizeMessageDesc").html(`${fontSizeMessage}px`);
+    $("yt-live-chat-text-message-renderer #message").attr("style", `font-size: ${fontSizeMessage}px !important;`);
+    updateCodeCss();
+})
+
+$("#fontSizeChannel").on("input", function() {
+    fontSizeChannel = $(this).val();
+    $("#fontSizeChannelDesc").html(`${fontSizeChannel}px`);
+    $("yt-live-chat-text-message-renderer #author-name").attr("style", `font-size: ${fontSizeChannel}px !important;`);
+    updateCodeCss();
+})

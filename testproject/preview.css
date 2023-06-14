@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Open Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
     --owner-color: #fc881c;
@@ -173,6 +173,10 @@ yt-live-chat-text-message-renderer #message * {
     padding: 6px 16px;
     border-radius: 0px 20px 20px 20px;
     border: 2px solid black;
+    box-shadow: 2px 3px 0px 0px  #a3a3a3;
+}
+
+#message.yt-live-chat-text-message-renderer {
     box-shadow: 2px 3px 0px 0px  #a3a3a3;
 }
 
